@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+/* font-family: 'Big Shoulders Display', cursive;
+font-family: 'Lexend Deca', sans-serif; */
+:root {
+    /* background, headings, buttons */
+    --primary-color: hsl(0, 0%, 95%);
+    /* paragraphs */
+    --secondary-color: hsla(0, 0%, 100%, 0.75);
+    /* cards color */
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+}
+html {
+    font-size: 62.5%;
+    font-family: "Lexend Deca", sans-serif;
+    background-color: var(--primary-color);
+    height: 100vh;
+}
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 1.6rem;
+    min-height: 100%;
+    width: 100%;
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 5fr 1fr;
+}
+.grid-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 30px 20px;
+}
+.card {
+    padding: 20px 20px;
+}
+.card.card1 {
+    background-color: var(--bright-orange);
+}
+.card.card2 {
+    background-color: var(--dark-cyan);
+}
+.card.card3 {
+    background-color: var(--very-dark-cyan);
+}
+
+.card img {
+    display: block;
+    margin: 3rem 0;
+}
+.card .title {
+    font-size: 4rem;
+    font-family: "Big Shoulders Display", sans-serif;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+.card .description {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin: 4rem 0;
+}
+.card a {
+    display: inline-block;
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 40px 0;
+    text-decoration: none;
+    cursor: pointer;
+    border: solid 2px var(--primary-color);
+}
+.card1 a {
+    color: var(--bright-orange);
+}
+.card2 a {
+    color: var(--dark-cyan);
+}
+.card3 a {
+    color: var(--very-dark-cyan);
+}
+.card1 a:hover {
+    color: var(--primary-color);
+    background-color: var(--bright-orange);
+}
+.card2 a:hover {
+    color: var(--primary-color);
+    background-color: var(--dark-cyan);
+}
+.card3 a:hover {
+    color: var(--primary-color);
+    background-color: var(--very-dark-cyan);
+}
+.card img,
+.card .title,
+.card .description,
+.card a {
+    margin-left: 20px;
+}
+
+.attribution {
+    margin: 10px auto;
+    font-size: 1.1rem;
+    font-family: "Lexend Deca", sans-serif;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 650px) {
+    .grid-container {
+        grid-template-rows: repeat (3, 1fr);
+        grid-template-columns: none;
+    }
+    .card {
+        text-align: center;
+    }
+    .card .description {
+        padding: 0 10%;
+    }
+    .card a {
+        padding: 15px 40px;
+        border-radius: 30px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .card {
+        text-align: start;
+    }
+    .card .description {
+        padding: 0 10px 0 0;
+    }
+    .card a {
+        padding: 10px 20px;
+        border-radius: 20px;
+    }
+}
